@@ -1,1 +1,64 @@
-<p>Dashboard</p>
+<nz-row style="margin-bottom: 32px">
+  <nz-col>
+    <h2 nz-typography><nz-icon nzType="dashboard" /> Dashboard</h2>
+  </nz-col>
+</nz-row>
+<nz-row [nzGutter]="[24, 24]">
+  <nz-col [nzSpan]="8">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(11.28 | number : '1.0-2')!"
+        nzTitle="Active"
+        [nzPrefix]="prefixTplOne"
+        nzSuffix="%"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+      <ng-template #prefixTplOne><nz-icon nzType="arrow-up" /></ng-template>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="8">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(9.3 | number : '1.0-2')!"
+        nzTitle="Idle"
+        [nzPrefix]="prefixTplTwo"
+        nzSuffix="%"
+        [nzValueStyle]="{ color: '#CF1322' }"
+      ></nz-statistic>
+      <ng-template #prefixTplTwo><nz-icon nzType="arrow-down" /></ng-template>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="8">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(1128 | number)!"
+        nzTitle="Feedback"
+        [nzPrefix]="prefixTpl"
+      ></nz-statistic>
+      <ng-template #prefixTpl><nz-icon nzType="like" /></ng-template>
+    </nz-card>
+  </nz-col>
+</nz-row>
+<nz-divider></nz-divider>
+<nz-row [nzGutter]="[24, 24]">
+  <nz-col [nzSpan]="12">
+    <nz-card nzTitle="User Engagement Over the Week">
+      <app-user-engagement />
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="12">
+    <nz-card nzTitle="Monthly Sales Revenue">
+      <app-sales-revenue />
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="12">
+    <nz-card nzTitle="Product Performance Comparison">
+      <app-product-performance />
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="12">
+    <nz-card nzTitle="Customer Demographics by Country">
+      <app-customer-demographics />
+    </nz-card>
+  </nz-col>
+</nz-row>
