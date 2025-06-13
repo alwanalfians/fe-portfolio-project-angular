@@ -32,7 +32,7 @@ export class ProductPerformanceComponent {
 
   chart: ApexChart = {
     height: 350,
-    type: 'radar',
+    type: 'bar',
   };
 
   xaxis = {

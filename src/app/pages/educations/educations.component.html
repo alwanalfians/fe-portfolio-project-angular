@@ -1,1 +1,53 @@
-<p>Educations</p>
+<nz-row style="margin-bottom: 32px">
+  <nz-col>
+    <h2 nz-typography><nz-icon nzType="book" /> Educations</h2>
+  </nz-col>
+</nz-row>
+<app-header-table></app-header-table>
+<nz-table #basicTable [nzData]="listEducations">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Created At</th>
+      <th>Created By</th>
+      <th>Updated At</th>
+      <th>Updated By</th>
+      <th>Name</th>
+      <th>Logo</th>
+      <th>Field of Study</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Description</th>
+      <th>Degree</th>
+      <th>Grade</th>
+      <th nzWidth="250px">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data; let i = index">
+      <td>
+        {{ (basicTable.nzPageIndex - 1) * basicTable.nzPageSize + i + 1 }}
+      </td>
+      <td>{{ parseDate(data.created_at) }}</td>
+      <td>{{ data.created_by }}</td>
+      <td>{{ parseDate(data.updated_at) }}</td>
+      <td>{{ data.updated_by }}</td>
+      <td>{{ data.institution_name }}</td>
+      <td>
+        <img nz-image width="50px" [nzSrc]="data.institution_logo" />
+      </td>
+      <td>{{ data.field_of_study }}</td>
+      <td>{{ parseDate(data.start_date) }}</td>
+      <td>{{ parseDate(data.end_date) }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.degree }}</td>
+      <td>
+        <nz-tag nzColor="green" :key="grade">{{ data.grade }}</nz-tag>
+      </td>
+      <td>
+        <button nz-button nzType="primary">Primary Button</button>
+        <button nz-button nzType="default">Default Button</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

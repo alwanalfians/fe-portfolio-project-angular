@@ -28,7 +28,6 @@ import { ProductPerformanceComponent } from '../../components/charts/product-per
     ProductPerformanceComponent,
   ],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
   constructor() {}
