@@ -9,6 +9,8 @@ import { listEducations } from '../../mockData/educations';
 import { NgFor } from '@angular/common';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { FormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
   selector: 'app-educations',
@@ -20,6 +22,8 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     NzTableModule,
     NzImageModule,
     NzTagModule,
+    FormsModule,
+    NzButtonModule,
     NgFor,
   ],
   templateUrl: './educations.component.html',

@@ -4,22 +4,22 @@
   </nz-col>
 </nz-row>
 <app-header-table></app-header-table>
-<nz-table #basicTable [nzData]="listEducations">
+<nz-table #basicTable [nzData]="listEducations" [nzScroll]="{ x: '1150px' }">
   <thead>
     <tr>
-      <th>No</th>
-      <th>Created At</th>
-      <th>Created By</th>
-      <th>Updated At</th>
-      <th>Updated By</th>
-      <th>Name</th>
-      <th>Logo</th>
-      <th>Field of Study</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Description</th>
-      <th>Degree</th>
-      <th>Grade</th>
+      <th nzWidth="55px">No</th>
+      <th nzWidth="200px">Created At</th>
+      <th nzWidth="200px">Created By</th>
+      <th nzWidth="200px">Updated At</th>
+      <th nzWidth="200px">Updated By</th>
+      <th nzWidth="400px">Name</th>
+      <th nzWidth="100px">Logo</th>
+      <th nzWidth="400px">Field of Study</th>
+      <th nzWidth="250px">Start Date</th>
+      <th nzWidth="200px">End Date</th>
+      <th nzWidth="400px">Description</th>
+      <th nzWidth="300px">Degree</th>
+      <th nzWidth="100px">Grade</th>
       <th nzWidth="250px">Action</th>
     </tr>
   </thead>
@@ -45,8 +45,12 @@
         <nz-tag nzColor="green" :key="grade">{{ data.grade }}</nz-tag>
       </td>
       <td>
-        <button nz-button nzType="primary">Primary Button</button>
-        <button nz-button nzType="default">Default Button</button>
+        <button nz-button nzType="default">
+          <nz-icon nzType="edit" />Edit
+        </button>
+        <button nz-button nzType="default" nzDanger>
+          <nz-icon nzType="delete" />Delete
+        </button>
       </td>
     </tr>
   </tbody>
