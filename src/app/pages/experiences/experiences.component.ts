@@ -1,5 +1,5 @@
 import { HelperService } from './../../helper.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { HeaderTableComponent } from '../../components/header-table.component';
@@ -34,10 +34,17 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
       }
   `,
 })
-export class ExperiencesComponent {
+export class ExperiencesComponent implements OnInit {
   constructor(private helper: HelperService) {}
 
-  listEducations = listExperiences;
+  listEducations: any[] = [];
+
+  ngOnInit() {
+    // Initialize data after component is mounted
+    setTimeout(() => {
+      this.listEducations = listExperiences;
+    });
+  }
 
   parseDate(text: string) {
     return this.helper.parseTimestamptzToDateString(text);

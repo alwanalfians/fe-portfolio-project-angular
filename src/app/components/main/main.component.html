@@ -17,7 +17,7 @@
         [nzInlineCollapsed]="isCollapsed"
       >
         <li nz-menu-item nzMatchRouter>
-          <a routerLink="/dashboard">
+          <a [routerLink]="['/dashboard']" routerLinkActive="active">
             <nz-icon nzType="dashboard" />
             <span>Dashboard</span>
           </a>
@@ -31,13 +31,13 @@
         >
           <ul>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/data/educations">
+              <a [routerLink]="['/data/educations']" routerLinkActive="active">
                 <nz-icon nzType="book" nzTheme="outline" />
                 <span>Educations</span>
               </a>
             </li>
             <li nz-menu-item nzMatchRouter>
-              <a routerLink="/data/experiences">
+              <a [routerLink]="['/data/experiences']" routerLinkActive="active">
                 <nz-icon nzType="profile" nzTheme="outline" />
                 <span>Experiences</span>
               </a>
@@ -52,7 +52,7 @@
         <router-outlet></router-outlet>
       </nz-content>
       <nz-footer
-        >Angular + Ant Design Demo ©2025 Created by alwanalfias</nz-footer
+        >Angular + Ant Design Demo ©2025 Created by alwanalfians</nz-footer
       >
     </nz-layout>
   </nz-layout>

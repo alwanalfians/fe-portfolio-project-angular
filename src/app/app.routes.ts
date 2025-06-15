@@ -10,7 +10,7 @@ export const routes: Routes = [
     data: {
       breadcrumb: 'Dashboard',
     },
-    component: DashboardComponent
+    component: DashboardComponent,
   },
   {
     path: 'data',
@@ -23,14 +23,14 @@ export const routes: Routes = [
         data: {
           breadcrumb: 'Educations',
         },
-        component: EducationsComponent
+        component: EducationsComponent,
       },
       {
         path: 'experiences',
         data: {
           breadcrumb: 'Experiences',
         },
-        component: ExperiencesComponent
+        component: ExperiencesComponent,
       },
     ],
   },
