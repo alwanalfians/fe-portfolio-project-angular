@@ -1,7 +1,4 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { EducationsComponent } from './pages/educations/educations.component';
-import { ExperiencesComponent } from './pages/experiences/experiences.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
@@ -10,7 +7,10 @@ export const routes: Routes = [
     data: {
       breadcrumb: 'Dashboard',
     },
-    component: DashboardComponent,
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
+      ),
   },
   {
     path: 'data',
@@ -23,14 +23,20 @@ export const routes: Routes = [
         data: {
           breadcrumb: 'Educations',
         },
-        component: EducationsComponent,
+        loadComponent: () =>
+          import('./pages/educations/educations.component').then(
+            (m) => m.EducationsComponent
+          ),
       },
       {
         path: 'experiences',
         data: {
           breadcrumb: 'Experiences',
         },
-        component: ExperiencesComponent,
+        loadComponent: () =>
+          import('./pages/experiences/experiences.component').then(
+            (m) => m.ExperiencesComponent
+          ),
       },
     ],
   },
